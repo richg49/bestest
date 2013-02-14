@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">besttest</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="menu_settings">Settings</string>
+
+    <string name="bt_1">Névhez képet</string>
+    <string name="bt_2">Képhez nevet</string>
+    <string name="bt_3">Jöhet bármi</string>
+    <string name="bt_4">Lista</string>
+    <string name="bt_5">Beállítások</string>
+</resources>
