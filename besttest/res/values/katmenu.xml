@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="katmenu">
+        <item >Törlés</item>
+        <item >Új</item>
+        <item>Módosítás</item><item >Vissza</item>
+        
+    </string-array>
+    
+</resources>

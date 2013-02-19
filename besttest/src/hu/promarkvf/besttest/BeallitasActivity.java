@@ -5,13 +5,9 @@ import hu.promarkvf.besttest.util.SystemUiHider;
 import android.annotation.TargetApi;
 import android.app.Activity;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
-import android.preference.PreferenceManager;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -23,7 +19,7 @@ import android.widget.Button;
  * 
  * @see SystemUiHider
  */
-public class MainActivity extends Activity {
+public class BeallitasActivity extends Activity {
 	/**
 	 * Whether or not the system UI should be auto-hidden after
 	 * {@link #AUTO_HIDE_DELAY_MILLIS} milliseconds.
@@ -56,16 +52,18 @@ public class MainActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 
-		setContentView(R.layout.activity_main);
+		setContentView(R.layout.activity_beallitas);
 
 		final View controlsView = findViewById(R.id.fullscreen_content_controls);
 		final View contentView = findViewById(R.id.fullscreen_content);
 
 		// Set up an instance of SystemUiHider to control the system UI for
 		// this activity.
-		mSystemUiHider = SystemUiHider.getInstance(this, contentView,HIDER_FLAGS);
+		mSystemUiHider = SystemUiHider.getInstance(this, contentView,
+				HIDER_FLAGS);
 		mSystemUiHider.setup();
-		mSystemUiHider.setOnVisibilityChangeListener(new SystemUiHider.OnVisibilityChangeListener() {
+		mSystemUiHider
+				.setOnVisibilityChangeListener(new SystemUiHider.OnVisibilityChangeListener() {
 					// Cached values.
 					int mControlsHeight;
 					int mShortAnimTime;
@@ -121,21 +119,19 @@ public class MainActivity extends Activity {
 		// while interacting with the UI.
 		findViewById(R.id.dummy_button).setOnTouchListener(
 				mDelayHideTouchListener);
-		// --- Kezeles inditas
+		final Button btnurit = (Button) findViewById(R.id.b_button1);
+		final Button btnkategoriak = (Button) findViewById(R.id.b_button2);
+		final Button btntesztek = (Button) findViewById(R.id.b_button3);
+		final Button btnlista = (Button) findViewById(R.id.b_button4);
+		final Button btntbeall = (Button) findViewById(R.id.b_button5);
+		final Button btnexit = (Button) findViewById(R.id.b_button6);
 
-		final Button btnn_k = (Button) findViewById(R.id.button1);
-		final Button btnk_n = (Button) findViewById(R.id.button2);
-		final Button btnjb = (Button) findViewById(R.id.button3);
-		final Button btnlist = (Button) findViewById(R.id.button4);
-		final Button btnbeall = (Button) findViewById(R.id.button5);
-		final Button btnexit = (Button) findViewById(R.id.button6);
-
-		// --- Kezeles inditas
-		btnbeall.setOnClickListener(new OnClickListener() {
+		// --- Kategóriák módosítása
+		btnkategoriak.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View arg0) {
 				Intent myIntent =new Intent();
-				myIntent.setClass(MainActivity.this, BeallitasActivity.class);
+				myIntent.setClass(BeallitasActivity.this, KategoriakActivity.class);
 				myIntent.putExtra("MyValue", "OK");
 				startActivity(myIntent);
 			}
@@ -190,32 +186,5 @@ public class MainActivity extends Activity {
 	private void delayedHide(int delayMillis) {
 		mHideHandler.removeCallbacks(mHideRunnable);
 		mHideHandler.postDelayed(mHideRunnable, delayMillis);
-	}
-
-	@Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.activity_main, menu);
-        return true;
-    }
-
-	@Override
-	public boolean onOptionsItemSelected(MenuItem item) {
-		Intent intent = new Intent();
-        intent.setClass(MainActivity.this, SetPreferenceActivity.class);
-        startActivityForResult(intent, 0); 
-		
-        return true;
-	}
-
-	@Override
-	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-		loadPref();
-	}
-
-	private void loadPref(){
-		SharedPreferences mySharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
-		
-//		JSONUlr = mySharedPreferences.getString("@string/prefJSONUlr","http://10.1.6.11/animiwebservice/");
-//		login_user = mySharedPreferences.getString("Azonosito","");
 	}
 }

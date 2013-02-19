@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#0099cc"
-    tools:context=".MainActivity" >
+    tools:context=".BeallitasActivity" >
 
     <!--
          The primary full-screen view. This can be replaced with whatever view
@@ -63,10 +63,10 @@
                 android:layout_height="wrap_content" >
 
                 <Button
-                    android:id="@+id/button1"
+                    android:id="@+id/b_button1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/bt_1" />
+                    android:text="@string/b_bt_1" />
 
             </TableRow>
 
@@ -77,10 +77,10 @@
                 android:layout_height="wrap_content" >
 
                 <Button
-                    android:id="@+id/button2"
+                    android:id="@+id/b_button2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/bt_2" />
+                    android:text="@string/b_bt_2" />
 
             </TableRow>
 
@@ -91,10 +91,10 @@
                 android:layout_height="wrap_content" >
 
                 <Button
-                    android:id="@+id/button3"
+                    android:id="@+id/b_button3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/bt_3" />
+                    android:text="@string/b_bt_3" />
 
             </TableRow>
 
@@ -105,10 +105,10 @@
                 android:layout_height="wrap_content" >
 
                 <Button
-                    android:id="@+id/button4"
+                    android:id="@+id/b_button4"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/bt_4" />
+                    android:text="@string/b_bt_4" />
 
             </TableRow>
 
@@ -119,10 +119,10 @@
                 android:layout_height="wrap_content" >
 
                 <Button
-                    android:id="@+id/button5"
+                    android:id="@+id/b_button5"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/bt_5" />
+                    android:text="@string/b_bt_5" />
 
             </TableRow>
             
@@ -134,14 +134,14 @@
                 android:layout_height="wrap_content" >
 
                 <Button
-                    android:id="@+id/button6"
+                    android:id="@+id/b_button6"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/bt_exit" />
 
             </TableRow>
 
-            </TableLayout>
+         </TableLayout>
 
     </FrameLayout>
 
