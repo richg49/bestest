@@ -55,7 +55,7 @@
         </activity>
         <activity
             android:name="hu.promarkvf.besttest.KerdesekAddActivity"
-            android:label="@string/title_activity_kerdesek_add" >
+            android:label="@string/title_activity_kerdesek_add" android:theme="@android:style/Theme.Dialog">
         </activity>
     </application>
 

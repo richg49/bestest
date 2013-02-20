@@ -31,7 +31,7 @@ public class KerdesekActivity extends ListActivity {
 
 		// Feliratkozás a hosszú lenyomás hatására előjövő menü kezelésére
 		registerForContextMenu(getListView());
-		if(kerdesList.size() == 10) {
+		if(kerdesList.size() == 0) {
 			ujkerdes = Boolean.TRUE;
 			DataPreferences.kerdes = null;
 			Intent myIntent = new Intent();

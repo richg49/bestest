@@ -61,7 +61,7 @@ public class KerdesekAddActivity extends Activity {
 			}
 		});
 		
-		Button btnCancel = (Button)findViewById(R.id.btnCancel);
+		Button btnCancel = (Button)findViewById(R.id.btnCancelkerdes);
 		btnCancel.setOnClickListener(new OnClickListener() {
 			public void onClick(View v) {
 				DataPreferences.kerdes = null;

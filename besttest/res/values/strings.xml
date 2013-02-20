@@ -30,7 +30,7 @@
     <string name="btnModkat">Visszaír</string>
     <string name="btnCancelkat">Mégsem</string>
     <string name="title_activity_kerdesek">Kérdések</string>
-    <string name="title_activity_kerdesek_add">Új kérdések</string>
+    <string name="title_activity_kerdesek_add">Új kérdés</string>
     <string name="kerdes">Kérdés</string>
     <string name="kerdes_kep">Kép</string>
     <string name="kerdes_leiras1">Leirás 1</string>
@@ -38,7 +38,7 @@
     <string name="btnUjkerdes">Felvesz</string>
     <string name="btnModkerdes">Visszaír</string>
     <string name="btnCancelKerdes">Mégsem</string>
-    <string name="btnUjkepFoto">Fotó készítés</string>
-    <string name="btnUjkepFile">Fotó feltöltés</string>
+    <string name="btnUjkepFoto">Készítés</string>
+    <string name="btnUjkepFile">Feltöltés</string>
 
 </resources>
