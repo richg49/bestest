@@ -10,11 +10,11 @@
     android:paddingTop="25dp" >
 
     <TextView
-        android:id="@+id/label"
+        android:id="@+id/kerdes"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="15dp"
-        android:text="@+id/label"
+        android:text="@+id/kerdes"
         android:textSize="30sp" >
     </TextView>
 </LinearLayout>

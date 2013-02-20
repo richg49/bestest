@@ -1,0 +1,94 @@
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:stretchColumns="1"
+    tools:context=".KerdesekAddActivity" >
+
+    <TableRow>
+        <TextView
+            android:layout_column="1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="right"
+            android:layout_marginRight="5dp"
+            android:text="@string/kerdes" />
+        <EditText 
+            android:id="@+id/ujkerdes"
+            android:inputType="text"
+            android:width="200dp"/>
+    </TableRow>
+    <TableRow>
+        <TextView
+            android:layout_column="1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="right"
+            android:layout_marginRight="5dp"
+            android:text="@string/kerdes_leiras1" />
+        <EditText 
+            android:id="@+id/ujkerdesleiras1"
+            android:inputType="text"
+            android:width="200dp"/>
+    </TableRow>
+    <TableRow>
+        <TextView
+            android:layout_column="1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="right"
+            android:layout_marginRight="5dp"
+            android:text="@string/kerdes_leiras2" />
+        <EditText 
+            android:id="@+id/ujkerdesleiras2"
+            android:inputType="text"
+            android:width="200dp"/>
+    </TableRow>
+    <TableRow
+        android:gravity="center">
+        <TextView
+            android:layout_column="1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="right"
+            android:layout_marginRight="5dp"
+            android:text="@string/kerdes_kep" />
+
+        <ImageView
+            android:id="@+id/imageViewkerdes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_launcher" />
+
+    </TableRow>
+    <TableRow>
+        <Button
+            android:id="@+id/btnUjkepFoto"
+            android:layout_column="1"
+            android:layout_width="wrap_content"
+            android:gravity="center"
+            android:text="@string/btnUjkepFoto" />
+        <Button 
+             android:id="@+id/btnUjkepFile"
+            android:layout_column="1"
+            android:layout_width="wrap_content"
+            android:gravity="center"
+            android:text="@string/btnUjkepFile" />
+    </TableRow>
+    <TableRow
+        android:layout_marginTop="50dp">
+        <Button
+            android:id="@+id/btnUjkerdes"
+            android:layout_column="1"
+            android:layout_width="wrap_content"
+            android:gravity="center"
+            android:text="@string/btnUjkat" />
+        <Button 
+             android:id="@+id/btnCancelkerdes"
+            android:layout_column="1"
+            android:layout_width="wrap_content"
+            android:gravity="center"
+            android:text="@string/btnCancelKerdes" />
+    </TableRow>
+    
+</TableLayout>

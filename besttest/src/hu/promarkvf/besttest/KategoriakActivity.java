@@ -33,6 +33,13 @@ public class KategoriakActivity extends ListActivity {
 
 		// Feliratkozás a hosszú lenyomás hatására előjövő menü kezelésére
 		registerForContextMenu(getListView());
+		if(kategoriaList.size() == 0) {
+			ujkat = Boolean.TRUE;
+			DataPreferences.kategoria = null;
+			Intent myIntent = new Intent();
+			myIntent.setClass(KategoriakActivity.this, KategoriaAddActivity.class);
+			startActivity(myIntent);
+		}
 	}
 
 	@Override
@@ -64,7 +71,7 @@ public class KategoriakActivity extends ListActivity {
 	public void onCreateContextMenu(ContextMenu menu, View v, ContextMenuInfo menuInfo) {
 		if (v.equals(getListView())) {
 			AdapterView.AdapterContextMenuInfo info = (AdapterView.AdapterContextMenuInfo) menuInfo;
-			// menu.setHeaderTitle(((Todo)getListAdapter().getItem(info.position)).getTitle());
+			menu.setHeaderTitle(((Kategoria)getListAdapter().getItem(info.position)).get_nev());
 			String[] menuItems = getResources().getStringArray(R.array.katmenu);
 			for (int i = 0; i < menuItems.length; i++) {
 				menu.add(Menu.NONE, i, i, menuItems[i]);

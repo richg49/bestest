@@ -137,6 +137,17 @@ public class BeallitasActivity extends Activity {
 			}
 		});
 
+		// --- Kérdések módosítása
+		btntesztek.setOnClickListener(new OnClickListener() {
+			@Override
+			public void onClick(View arg0) {
+				Intent myIntent =new Intent();
+				myIntent.setClass(BeallitasActivity.this, KerdesekActivity.class);
+				myIntent.putExtra("MyValue", "OK");
+				startActivity(myIntent);
+			}
+		});
+
 		// --- Kilépés
 		btnexit.setOnClickListener(new OnClickListener() {
 			@Override

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">besttest</string>
+    <string name="app_name">BestTest</string>
     <string name="dummy_content"></string>
     <string name="dummy_button">Dummy Button</string>
     <string name="menu_settings">Settings</string>
@@ -21,13 +21,24 @@
     <string name="m_del">Törlés</string>
     <string name="m_new">Új kategória</string>
     <string name="m_back">Vissza</string>
-    <string name="title_activity_kategoria_add">KategoriaAddActivity</string>
+    <string name="title_activity_kategoria_add">Új kategória</string>
+    <string name="title_activity_kategoria_mod">Kategória módosítása</string>
     <string name="action_settings">Settings</string>
-    <string name="hello_world">Hello world!</string>
     <string name="kategoria_nev">Név</string>
     <string name="kategoria_szulo">Szülő ID</string>
     <string name="btnUjkat">Felvesz</string>
     <string name="btnModkat">Visszaír</string>
-    <string name="btnCancel">Mégsem</string>
-    
+    <string name="btnCancelkat">Mégsem</string>
+    <string name="title_activity_kerdesek">Kérdések</string>
+    <string name="title_activity_kerdesek_add">Új kérdések</string>
+    <string name="kerdes">Kérdés</string>
+    <string name="kerdes_kep">Kép</string>
+    <string name="kerdes_leiras1">Leirás 1</string>
+    <string name="kerdes_leiras2">Leirás 2</string>
+    <string name="btnUjkerdes">Felvesz</string>
+    <string name="btnModkerdes">Visszaír</string>
+    <string name="btnCancelKerdes">Mégsem</string>
+    <string name="btnUjkepFoto">Fotó készítés</string>
+    <string name="btnUjkepFile">Fotó feltöltés</string>
+
 </resources>

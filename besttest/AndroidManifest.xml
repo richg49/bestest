@@ -46,7 +46,16 @@
         </activity>
         <activity
             android:name="hu.promarkvf.besttest.KategoriaAddActivity"
-            android:label="@string/title_activity_kategoria_add" >
+            android:label="@string/title_activity_kategoria_add"
+            android:theme="@android:style/Theme.Dialog" >
+        </activity>
+        <activity
+            android:name="hu.promarkvf.besttest.KerdesekActivity"
+            android:label="@string/title_activity_kerdesek" >
+        </activity>
+        <activity
+            android:name="hu.promarkvf.besttest.KerdesekAddActivity"
+            android:label="@string/title_activity_kerdesek_add" >
         </activity>
     </application>
 

@@ -9,7 +9,6 @@ import android.widget.Button;
 import android.widget.EditText;
 
 public class KategoriaAddActivity extends Activity {
-
 	private static final int DATE_DUE_DIALOG_ID = 1;
 	private EditText editKatNev;
 	private EditText editKatSzulo;
@@ -25,11 +24,13 @@ public class KategoriaAddActivity extends Activity {
 		btnOk.setText(R.string.btnUjkat);
 
 		ujkat = Boolean.TRUE;
+		setTitle(R.string.title_activity_kategoria_add);
 		if(DataPreferences.kategoria != null) {
     		editKatNev.setText(DataPreferences.kategoria.get_nev());
     		editKatSzulo.setText(String.valueOf(DataPreferences.kategoria.get_szulo()));
     		btnOk.setText(R.string.btnModkat);
     		ujkat = Boolean.FALSE;
+    		setTitle(R.string.title_activity_kategoria_mod);
     	}
         
 		btnOk.setOnClickListener(new OnClickListener() {

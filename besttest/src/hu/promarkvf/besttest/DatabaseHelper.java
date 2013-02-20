@@ -118,4 +118,43 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 		 db.delete(TABLE_KATEGORIA,COLUMN_KATEGORIA_ID+"=?", new String [] {String.valueOf(kat.get_id())});
 		 db.close();
 	 }
+// kérdések
+	 public long AddKerdes(Kerdes kerdes) {
+		long lastID = 0;
+		SQLiteDatabase db= this.getWritableDatabase();
+		ContentValues cv=new ContentValues();
+		
+		cv.put(COLUMN_KERDES_KERDES, kerdes.get_kerdes());
+		cv.put(COLUMN_KERDES_KEP, kerdes.get_kep());
+		cv.put(COLUMN_KERDES_LEIRAS1, kerdes.get_leiras1());
+		cv.put(COLUMN_KERDES_LEIRAS2, kerdes.get_leiras2());
+		
+		lastID = db.insert(TABLE_KERDES, COLUMN_KERDES_KERDES, cv);
+		
+		db.close();
+		return lastID;
+	}
+
+	public List<Kerdes> getAllKerdes() {
+		List<Kerdes> kerdesList = new ArrayList<Kerdes>();
+		Kerdes kerdes;
+		SQLiteDatabase db = this.getWritableDatabase();
+		Cursor cursor = db.rawQuery("SELECT id, kerdes, kep, leiras1, leiras2 FROM " + TABLE_KERDES, null);
+		// looping through all rows and adding to list
+		if (cursor.moveToFirst() && cursor.getCount() > 0) {
+			do {
+				kerdes = new Kerdes();
+				kerdes.set_id(Integer.parseInt(cursor.getString(0)));
+				kerdes.set_kerdes(cursor.getString(1));
+				kerdes.set_kep(cursor.getBlob(2));
+				kerdes.set_leiras1(cursor.getString(3));
+				kerdes.set_leiras2(cursor.getString(4));
+				// Adding contact to list
+				kerdesList.add(kerdes);
+			} while (cursor.moveToNext());
+		}
+
+		return kerdesList;
+	}
+
 }
