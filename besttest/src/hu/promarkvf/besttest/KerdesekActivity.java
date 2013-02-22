@@ -21,7 +21,7 @@ public class KerdesekActivity extends ListActivity {
 	Kerdes kerdes = new Kerdes();
 	Boolean ujkerdes = Boolean.FALSE;
 	AdapterView.AdapterContextMenuInfo info;
-	
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -31,7 +31,7 @@ public class KerdesekActivity extends ListActivity {
 
 		// Feliratkozás a hosszú lenyomás hatására előjövő menü kezelésére
 		registerForContextMenu(getListView());
-		if(kerdesList.size() == 0) {
+		if (kerdesList.size() == 0) {
 			ujkerdes = Boolean.TRUE;
 			DataPreferences.kerdes = null;
 			Intent myIntent = new Intent();
@@ -45,7 +45,7 @@ public class KerdesekActivity extends ListActivity {
 		super.onResume();
 		if (DataPreferences.kerdes != null) {
 			if (ujkerdes) {
-// Új
+				// Új
 				long lastID = 0;
 				DatabaseHelper dbHelper = new DatabaseHelper(this);
 				lastID = dbHelper.AddKerdes(DataPreferences.kerdes);
@@ -53,11 +53,10 @@ public class KerdesekActivity extends ListActivity {
 				((KerdesArrayAdapter) getListAdapter()).addItem(DataPreferences.kerdes);
 				DataPreferences.kerdes = null;
 				((KerdesArrayAdapter) getListAdapter()).notifyDataSetChanged();
-			}
-			else {
-// Módosítás
+			} else {
+				// Módosítás
 				DatabaseHelper dbHelper = new DatabaseHelper(this);
-//				dbHelper.UpdateKerdes(DataPreferences.kerdes);
+				// dbHelper.UpdateKerdes(DataPreferences.kerdes);
 				((KerdesArrayAdapter) getListAdapter()).modifyRow(info.position, DataPreferences.kerdes);
 				DataPreferences.kerdes = null;
 				((KerdesArrayAdapter) getListAdapter()).notifyDataSetChanged();
@@ -66,17 +65,10 @@ public class KerdesekActivity extends ListActivity {
 	}
 
 	@Override
-	public boolean onCreateOptionsMenu(Menu menu) {
-		// Inflate the menu; this adds items to the action bar if it is present.
-		getMenuInflater().inflate(R.menu.kerdesek, menu);
-		return true;
-	}
-
-	@Override
 	public void onCreateContextMenu(ContextMenu menu, View v, ContextMenuInfo menuInfo) {
 		if (v.equals(getListView())) {
 			AdapterView.AdapterContextMenuInfo info = (AdapterView.AdapterContextMenuInfo) menuInfo;
-			menu.setHeaderTitle(((Kerdes)getListAdapter().getItem(info.position)).get_kerdes());
+			menu.setHeaderTitle(((Kerdes) getListAdapter().getItem(info.position)).get_kerdes());
 			String[] menuItems = getResources().getStringArray(R.array.katmenu);
 			for (int i = 0; i < menuItems.length; i++) {
 				menu.add(Menu.NONE, i, i, menuItems[i]);
@@ -90,16 +82,16 @@ public class KerdesekActivity extends ListActivity {
 		int menuItemIndex = item.getItemId();
 
 		switch (menuItemIndex) {
-// törlés
+		// törlés
 		case 0: {
-				DatabaseHelper dbHelper = new DatabaseHelper(this);
-				Kerdes kat = (Kerdes) getListAdapter().getItem(info.position);
-//				dbHelper.DeleteKerdes(kat);
-				((KerdesArrayAdapter)getListAdapter()).deleteRow((Kerdes)getListAdapter().getItem(info.position));
-				((KerdesArrayAdapter)getListAdapter()).notifyDataSetChanged();
-			}
+			DatabaseHelper dbHelper = new DatabaseHelper(this);
+			Kerdes kat = (Kerdes) getListAdapter().getItem(info.position);
+			// dbHelper.DeleteKerdes(kat);
+			((KerdesArrayAdapter) getListAdapter()).deleteRow((Kerdes) getListAdapter().getItem(info.position));
+			((KerdesArrayAdapter) getListAdapter()).notifyDataSetChanged();
+		}
 			break;
-// új
+		// új
 		case 1: {
 			ujkerdes = Boolean.TRUE;
 			DataPreferences.kerdes = null;
@@ -107,8 +99,8 @@ public class KerdesekActivity extends ListActivity {
 			myIntent.setClass(KerdesekActivity.this, KerdesekAddActivity.class);
 			startActivity(myIntent);
 		}
-		break;
-// módosítás
+			break;
+		// módosítás
 		case 2: {
 			ujkerdes = Boolean.FALSE;
 			DataPreferences.kerdes = (Kerdes) getListAdapter().getItem(info.position);
@@ -116,7 +108,7 @@ public class KerdesekActivity extends ListActivity {
 			myIntent.setClass(KerdesekActivity.this, KerdesekAddActivity.class);
 			startActivity(myIntent);
 		}
-		break;
+			break;
 
 		default:
 			break;

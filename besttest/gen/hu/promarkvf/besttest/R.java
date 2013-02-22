@@ -9,7 +9,7 @@ package hu.promarkvf.besttest;
 
 public final class R {
     public static final class array {
-        public static final int katmenu=0x7f070000;
+        public static final int katmenu=0x7f090000;
     }
     public static final class attr {
         /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
@@ -38,98 +38,98 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int ic_launcher=0x7f020000;
     }
     public static final class id {
-        public static final int action_settings=0x7f0b0024;
-        public static final int b_button1=0x7f0b0004;
-        public static final int b_button2=0x7f0b0006;
-        public static final int b_button3=0x7f0b0008;
-        public static final int b_button4=0x7f0b000a;
-        public static final int b_button5=0x7f0b000c;
-        public static final int b_button6=0x7f0b000e;
-        public static final int btnCancel=0x7f0b0012;
-        public static final int btnCancelkerdes=0x7f0b001c;
-        public static final int btnUjkat=0x7f0b0011;
-        public static final int btnUjkepFile=0x7f0b001a;
-        public static final int btnUjkepFoto=0x7f0b0019;
-        public static final int btnUjkerdes=0x7f0b001b;
-        public static final int button1=0x7f0b001d;
-        public static final int button2=0x7f0b001e;
-        public static final int button3=0x7f0b001f;
-        public static final int button4=0x7f0b0020;
-        public static final int button5=0x7f0b0021;
-        public static final int button6=0x7f0b0022;
-        public static final int dummy_button=0x7f0b0002;
-        public static final int fullscreen_content=0x7f0b0000;
-        public static final int fullscreen_content_controls=0x7f0b0001;
-        public static final int imageViewkerdes=0x7f0b0018;
-        public static final int katNev=0x7f0b000f;
-        public static final int katSzulo=0x7f0b0010;
-        public static final int kerdes=0x7f0b0014;
-        public static final int label=0x7f0b0013;
-        public static final int menu_settings=0x7f0b0023;
-        public static final int tableRow1=0x7f0b0003;
-        public static final int tableRow2=0x7f0b0005;
-        public static final int tableRow3=0x7f0b0007;
-        public static final int tableRow4=0x7f0b0009;
-        public static final int tableRow5=0x7f0b000b;
-        public static final int tableRow6=0x7f0b000d;
-        public static final int ujkerdes=0x7f0b0015;
-        public static final int ujkerdesleiras1=0x7f0b0016;
-        public static final int ujkerdesleiras2=0x7f0b0017;
+        public static final int b_button1=0x7f0a0004;
+        public static final int b_button2=0x7f0a0006;
+        public static final int b_button3=0x7f0a0008;
+        public static final int b_button4=0x7f0a000a;
+        public static final int b_button5=0x7f0a000c;
+        public static final int b_button6=0x7f0a000e;
+        public static final int baseLayout=0x7f0a000f;
+        public static final int btnCancel=0x7f0a0016;
+        public static final int btnCancelkerdes=0x7f0a0020;
+        public static final int btnUjkat=0x7f0a0015;
+        public static final int btnUjkepFile=0x7f0a001e;
+        public static final int btnUjkepFoto=0x7f0a001d;
+        public static final int btnUjkerdes=0x7f0a001f;
+        public static final int button1=0x7f0a0021;
+        public static final int button2=0x7f0a0022;
+        public static final int button3=0x7f0a0023;
+        public static final int button4=0x7f0a0024;
+        public static final int button5=0x7f0a0025;
+        public static final int button6=0x7f0a0026;
+        public static final int buttonPhoto=0x7f0a0010;
+        public static final int cameraPreview=0x7f0a0011;
+        public static final int dummy_button=0x7f0a0002;
+        public static final int fullscreen_content=0x7f0a0000;
+        public static final int fullscreen_content_controls=0x7f0a0001;
+        public static final int imageViewkerdes=0x7f0a001c;
+        public static final int ivPhoto=0x7f0a0012;
+        public static final int katNev=0x7f0a0013;
+        public static final int katSzulo=0x7f0a0014;
+        public static final int kategoria=0x7f0a0017;
+        public static final int kerdes=0x7f0a0018;
+        public static final int tableRow1=0x7f0a0003;
+        public static final int tableRow2=0x7f0a0005;
+        public static final int tableRow3=0x7f0a0007;
+        public static final int tableRow4=0x7f0a0009;
+        public static final int tableRow5=0x7f0a000b;
+        public static final int tableRow6=0x7f0a000d;
+        public static final int ujkerdes=0x7f0a0019;
+        public static final int ujkerdesleiras1=0x7f0a001a;
+        public static final int ujkerdesleiras2=0x7f0a001b;
     }
     public static final class layout {
         public static final int activity_beallitas=0x7f030000;
-        public static final int activity_kategoria_add=0x7f030001;
-        public static final int activity_kategoriak=0x7f030002;
-        public static final int activity_kerdesek=0x7f030003;
-        public static final int activity_kerdesek_add=0x7f030004;
-        public static final int activity_main=0x7f030005;
-    }
-    public static final class menu {
-        public static final int activity_main=0x7f0a0000;
-        public static final int kategoria_add=0x7f0a0001;
-        public static final int kerdesek=0x7f0a0002;
-        public static final int kerdesek_add=0x7f0a0003;
+        public static final int activity_camera=0x7f030001;
+        public static final int activity_kategoria_add=0x7f030002;
+        public static final int activity_kategoriak=0x7f030003;
+        public static final int activity_kerdesek=0x7f030004;
+        public static final int activity_kerdesek_add=0x7f030005;
+        public static final int activity_main=0x7f030006;
     }
     public static final class string {
-        public static final int action_settings=0x7f080016;
-        public static final int app_name=0x7f080000;
-        public static final int b_bt_1=0x7f08000b;
-        public static final int b_bt_2=0x7f08000c;
-        public static final int b_bt_3=0x7f08000d;
-        public static final int b_bt_4=0x7f08000e;
-        public static final int b_bt_5=0x7f08000f;
-        public static final int bt_1=0x7f080005;
-        public static final int bt_2=0x7f080006;
-        public static final int bt_3=0x7f080007;
-        public static final int bt_4=0x7f080008;
-        public static final int bt_5=0x7f080009;
-        public static final int bt_exit=0x7f080004;
-        public static final int btnCancelKerdes=0x7f080024;
-        public static final int btnCancelkat=0x7f08001b;
-        public static final int btnModkat=0x7f08001a;
-        public static final int btnModkerdes=0x7f080023;
-        public static final int btnUjkat=0x7f080019;
-        public static final int btnUjkepFile=0x7f080026;
-        public static final int btnUjkepFoto=0x7f080025;
-        public static final int btnUjkerdes=0x7f080022;
-        public static final int dummy_button=0x7f080002;
-        public static final int dummy_content=0x7f080001;
-        public static final int kategoria_nev=0x7f080017;
-        public static final int kategoria_szulo=0x7f080018;
-        public static final int kerdes=0x7f08001e;
-        public static final int kerdes_kep=0x7f08001f;
-        public static final int kerdes_leiras1=0x7f080020;
-        public static final int kerdes_leiras2=0x7f080021;
-        public static final int m_back=0x7f080013;
-        public static final int m_del=0x7f080011;
-        public static final int m_new=0x7f080012;
-        public static final int menu_settings=0x7f080003;
-        public static final int title_activity_beallitas=0x7f08000a;
-        public static final int title_activity_kategoria_add=0x7f080014;
-        public static final int title_activity_kategoria_mod=0x7f080015;
-        public static final int title_activity_kategoriak=0x7f080010;
-        public static final int title_activity_kerdesek=0x7f08001c;
-        public static final int title_activity_kerdesek_add=0x7f08001d;
+        public static final int action_settings=0x7f070016;
+        public static final int app_name=0x7f070000;
+        public static final int b_bt_1=0x7f07000b;
+        public static final int b_bt_2=0x7f07000c;
+        public static final int b_bt_3=0x7f07000d;
+        public static final int b_bt_4=0x7f07000e;
+        public static final int b_bt_5=0x7f07000f;
+        public static final int bt_1=0x7f070005;
+        public static final int bt_2=0x7f070006;
+        public static final int bt_3=0x7f070007;
+        public static final int bt_4=0x7f070008;
+        public static final int bt_5=0x7f070009;
+        public static final int bt_exit=0x7f070004;
+        public static final int btnCancelKerdes=0x7f070024;
+        public static final int btnCancelkat=0x7f07001b;
+        public static final int btnCapture=0x7f070028;
+        public static final int btnModkat=0x7f07001a;
+        public static final int btnModkerdes=0x7f070023;
+        public static final int btnUjkat=0x7f070019;
+        public static final int btnUjkepFile=0x7f070026;
+        public static final int btnUjkepFoto=0x7f070025;
+        public static final int btnUjkerdes=0x7f070022;
+        public static final int dummy_button=0x7f070002;
+        public static final int dummy_content=0x7f070001;
+        public static final int ivPhoto=0x7f070029;
+        public static final int kategoria_nev=0x7f070017;
+        public static final int kategoria_szulo=0x7f070018;
+        public static final int kerdes=0x7f07001e;
+        public static final int kerdes_kep=0x7f07001f;
+        public static final int kerdes_leiras1=0x7f070020;
+        public static final int kerdes_leiras2=0x7f070021;
+        public static final int m_back=0x7f070013;
+        public static final int m_del=0x7f070011;
+        public static final int m_new=0x7f070012;
+        public static final int menu_settings=0x7f070003;
+        public static final int title_activity_beallitas=0x7f07000a;
+        public static final int title_activity_camera=0x7f070027;
+        public static final int title_activity_kategoria_add=0x7f070014;
+        public static final int title_activity_kategoria_mod=0x7f070015;
+        public static final int title_activity_kategoriak=0x7f070010;
+        public static final int title_activity_kerdesek=0x7f07001c;
+        public static final int title_activity_kerdesek_add=0x7f07001d;
     }
     public static final class style {
         /** 
@@ -143,28 +143,15 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
             backward-compatibility can go here.
 
         
-
-        Base application theme for API 11+. This theme completely replaces
-        AppBaseTheme from res/values/styles.xml on API 11+ devices.
-
-    
- API 11 theme customizations can go here. 
-
-        Base application theme for API 14+. This theme completely replaces
-        AppBaseTheme from BOTH res/values/styles.xml and
-        res/values-v11/styles.xml on API 14+ devices.
-    
- API 14 theme customizations can go here. 
          */
-        public static final int AppBaseTheme=0x7f090000;
+        public static final int AppBaseTheme=0x7f080000;
         /**  Application theme. 
  All customizations that are NOT specific to a particular API-level can go here. 
          */
-        public static final int AppTheme=0x7f090001;
-        public static final int ButtonBar=0x7f090003;
-        public static final int ButtonBarButton=0x7f090002;
-        public static final int FullscreenActionBarStyle=0x7f090005;
-        public static final int FullscreenTheme=0x7f090004;
+        public static final int AppTheme=0x7f080001;
+        public static final int ButtonBar=0x7f080003;
+        public static final int ButtonBarButton=0x7f080002;
+        public static final int FullscreenTheme=0x7f080004;
     }
     public static final class xml {
         public static final int setup=0x7f040000;

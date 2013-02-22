@@ -3,6 +3,7 @@ package hu.promarkvf.besttest;
 import android.os.Bundle;
 import android.provider.MediaStore.Images;
 import android.app.Activity;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.view.Menu;
 import android.view.View;
@@ -68,13 +69,15 @@ public class KerdesekAddActivity extends Activity {
 				finish();
 			}
 		});
-	}
 
-	@Override
-	public boolean onCreateOptionsMenu(Menu menu) {
-		// Inflate the menu; this adds items to the action bar if it is present.
-		getMenuInflater().inflate(R.menu.kerdesek_add, menu);
-		return true;
+		Button btnCamera = (Button)findViewById(R.id.btnUjkepFoto);
+		btnCamera.setOnClickListener(new OnClickListener() {
+			public void onClick(View v) {
+				Intent myIntent = new Intent();
+				myIntent.setClass(KerdesekAddActivity.this, CameraActivity.class);
+				startActivity(myIntent);
+			}
+		});
 	}
 
 }

@@ -40,5 +40,8 @@
     <string name="btnCancelKerdes">Mégsem</string>
     <string name="btnUjkepFoto">Készítés</string>
     <string name="btnUjkepFile">Feltöltés</string>
+    <string name="title_activity_camera">Új kép</string>
+	<string name="btnCapture">Capture photo</string>
+	<string name="ivPhoto">Photo</string>
 
 </resources>

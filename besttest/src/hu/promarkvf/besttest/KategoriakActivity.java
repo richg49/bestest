@@ -3,7 +3,6 @@ package hu.promarkvf.besttest;
 import java.util.ArrayList;
 import java.util.List;
 
-import android.R.bool;
 import android.app.ListActivity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -15,7 +14,6 @@ import android.view.ContextMenu.ContextMenuInfo;
 import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.Toast;
-import android.widget.AdapterView.OnItemClickListener;
 
 public class KategoriakActivity extends ListActivity {
 
@@ -23,7 +21,7 @@ public class KategoriakActivity extends ListActivity {
 	Kategoria kategoria = new Kategoria();
 	Boolean ujkat = Boolean.FALSE;
 	AdapterView.AdapterContextMenuInfo info;
-	
+
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -33,7 +31,7 @@ public class KategoriakActivity extends ListActivity {
 
 		// Feliratkozás a hosszú lenyomás hatására előjövő menü kezelésére
 		registerForContextMenu(getListView());
-		if(kategoriaList.size() == 0) {
+		if (kategoriaList.size() == 0) {
 			ujkat = Boolean.TRUE;
 			DataPreferences.kategoria = null;
 			Intent myIntent = new Intent();
@@ -47,7 +45,7 @@ public class KategoriakActivity extends ListActivity {
 		super.onResume();
 		if (DataPreferences.kategoria != null) {
 			if (ujkat) {
-// Új
+				// Új
 				long lastID = 0;
 				DatabaseHelper dbHelper = new DatabaseHelper(this);
 				lastID = dbHelper.AddKategoria(DataPreferences.kategoria);
@@ -55,9 +53,8 @@ public class KategoriakActivity extends ListActivity {
 				((KategoriaArrayAdapter) getListAdapter()).addItem(DataPreferences.kategoria);
 				DataPreferences.kategoria = null;
 				((KategoriaArrayAdapter) getListAdapter()).notifyDataSetChanged();
-			}
-			else {
-// Módosítás
+			} else {
+				// Módosítás
 				DatabaseHelper dbHelper = new DatabaseHelper(this);
 				dbHelper.UpdateKategoria(DataPreferences.kategoria);
 				((KategoriaArrayAdapter) getListAdapter()).modifyRow(info.position, DataPreferences.kategoria);
@@ -71,7 +68,7 @@ public class KategoriakActivity extends ListActivity {
 	public void onCreateContextMenu(ContextMenu menu, View v, ContextMenuInfo menuInfo) {
 		if (v.equals(getListView())) {
 			AdapterView.AdapterContextMenuInfo info = (AdapterView.AdapterContextMenuInfo) menuInfo;
-			menu.setHeaderTitle(((Kategoria)getListAdapter().getItem(info.position)).get_nev());
+			menu.setHeaderTitle(((Kategoria) getListAdapter().getItem(info.position)).get_nev());
 			String[] menuItems = getResources().getStringArray(R.array.katmenu);
 			for (int i = 0; i < menuItems.length; i++) {
 				menu.add(Menu.NONE, i, i, menuItems[i]);
@@ -85,16 +82,16 @@ public class KategoriakActivity extends ListActivity {
 		int menuItemIndex = item.getItemId();
 
 		switch (menuItemIndex) {
-// törlés
+		// törlés
 		case 0: {
-				DatabaseHelper dbHelper = new DatabaseHelper(this);
-				Kategoria kat = (Kategoria) getListAdapter().getItem(info.position);
-				dbHelper.DeleteKategoria(kat);
-				((KategoriaArrayAdapter)getListAdapter()).deleteRow((Kategoria)getListAdapter().getItem(info.position));
-				((KategoriaArrayAdapter)getListAdapter()).notifyDataSetChanged();
-			}
+			DatabaseHelper dbHelper = new DatabaseHelper(this);
+			Kategoria kat = (Kategoria) getListAdapter().getItem(info.position);
+			dbHelper.DeleteKategoria(kat);
+			((KategoriaArrayAdapter) getListAdapter()).deleteRow((Kategoria) getListAdapter().getItem(info.position));
+			((KategoriaArrayAdapter) getListAdapter()).notifyDataSetChanged();
+		}
 			break;
-// új
+		// új
 		case 1: {
 			ujkat = Boolean.TRUE;
 			DataPreferences.kategoria = null;
@@ -102,8 +99,8 @@ public class KategoriakActivity extends ListActivity {
 			myIntent.setClass(KategoriakActivity.this, KategoriaAddActivity.class);
 			startActivity(myIntent);
 		}
-		break;
-// módosítás
+			break;
+		// módosítás
 		case 2: {
 			ujkat = Boolean.FALSE;
 			DataPreferences.kategoria = (Kategoria) getListAdapter().getItem(info.position);
@@ -111,7 +108,7 @@ public class KategoriakActivity extends ListActivity {
 			myIntent.setClass(KategoriakActivity.this, KategoriaAddActivity.class);
 			startActivity(myIntent);
 		}
-		break;
+			break;
 
 		default:
 			break;
