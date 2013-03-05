@@ -22,8 +22,7 @@
         <activity
             android:name="hu.promarkvf.besttest.MainActivity"
             android:configChanges="orientation|keyboardHidden"
-            android:label="@string/app_name"
-            android:theme="@style/FullscreenTheme" >
+            android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -33,13 +32,12 @@
         <activity
             android:name="hu.promarkvf.besttest.BeallitasActivity"
             android:configChanges="orientation|keyboardHidden"
-            android:label="@string/title_activity_beallitas"
-            android:theme="@style/FullscreenTheme" >
+            android:label="@string/title_activity_beallitas" >
         </activity>
         <activity
             android:name="hu.promarkvf.besttest.KategoriakActivity"
             android:configChanges="orientation|keyboardHidden"
-            android:label="@string/title_activity_kategoriak">
+            android:label="@string/title_activity_kategoriak" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="android.app.ExpandableListActivity" />
@@ -61,6 +59,50 @@
         <activity
             android:name="hu.promarkvf.besttest.CameraActivity"
             android:label="@string/title_activity_camera" >
+        </activity>
+        <activity
+            android:name="hu.promarkvf.besttest.NevKepActivity"
+            android:label="@string/title_activity_nev_kep" >
+        </activity>
+        <activity
+            android:name="hu.promarkvf.besttest.DbToolsActivity"
+            android:label="@string/title_activity_db_tools" >
+        </activity>
+        <activity
+            android:name="hu.promarkvf.besttest.KepNevActivity"
+            android:label="@string/title_activity_kep_nev" >
+        </activity>
+        <activity
+            android:name="hu.promarkvf.besttest.SettingActivity"
+            android:label="@string/title_activity_setting" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="PreferenceActivity" />
+        </activity>
+        <activity
+            android:name="hu.promarkvf.besttest.NevNevActivity"
+            android:label="@string/title_activity_nev_nev" >
+        </activity>
+        <activity
+            android:name="com.google.ads.AdActivity"
+            android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize" />
+        <activity
+            android:name="hu.promarkvf.besttest.AddUserActivity"
+            android:label="@string/title_activity_add_user"
+            android:theme="@android:style/Theme.Dialog" >
+        </activity>
+        <activity
+            android:name="hu.promarkvf.besttest.UsersActivity"
+            android:label="@string/title_activity_users" >
+        </activity>
+        <activity
+            android:name="hu.promarkvf.besttest.UserSelActivity"
+            android:label="@string/title_activity_user_sel"
+            android:theme="@android:style/Theme.Dialog" >
+        </activity>
+        <activity
+            android:name="hu.promarkvf.besttest.UploadActivity"
+            android:label="@string/title_activity_upload">
         </activity>
     </application>
 

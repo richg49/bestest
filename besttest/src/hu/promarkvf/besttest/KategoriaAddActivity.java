@@ -2,6 +2,8 @@ package hu.promarkvf.besttest;
 
 import android.os.Bundle;
 import android.app.Activity;
+import android.content.pm.ActivityInfo;
+import android.content.res.Configuration;
 import android.view.Menu;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -57,9 +59,16 @@ public class KategoriaAddActivity extends Activity {
 		btnCancel.setOnClickListener(new OnClickListener() {
 			public void onClick(View v) {
 				DataPreferences.kategoria = null;
+//				DataPreferences.kep = null;
+				DataPreferences.kerdes = null;
 				finish();
 			}
 		});
 	}
 
+	@Override
+	public void onConfigurationChanged(Configuration newConfig) {
+	    super.onConfigurationChanged(newConfig);
+	    setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+	}
 }

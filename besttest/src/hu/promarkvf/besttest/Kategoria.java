@@ -19,7 +19,13 @@ public class Kategoria {
 	}
 
 	public Kategoria() {
-		// TODO Auto-generated constructor stub
+		this._id = 0;
+		this._nev = "";
+		this._szulo = 0;
+	}
+
+	public Kategoria get_kat() {
+		return this;
 	}
 
 	public int get_id() {

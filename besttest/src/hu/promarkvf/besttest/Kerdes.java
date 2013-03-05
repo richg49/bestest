@@ -1,20 +1,22 @@
 package hu.promarkvf.besttest;
 
+import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
-import java.nio.Buffer;
-import java.nio.ByteBuffer;
+import java.util.ArrayList;
+import java.util.List;
 
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 
 public class Kerdes {
-	
 
-	int _id;
-	String _kerdes;
-	byte[] _kep;
-	String _leiras1;
-	String _leiras2;
-
+	private int _id;
+	private String _kerdes;
+	private byte[] _kep;
+	private String _leiras1;
+	private String _leiras2;
+	private List<KategoriaSelected> _selectedKategoriak;
+			
 	public Kerdes() {
 		super();
 		this._id = 0;
@@ -22,6 +24,7 @@ public class Kerdes {
 		this._kep = null;
 		this._leiras1 = "";
 		this._leiras2 = "";
+		this._selectedKategoriak = null;
 	}
 
 	public Kerdes(int _id, String _kerdes, byte[] _kep, String _leiras1, String _leiras2) {
@@ -31,6 +34,7 @@ public class Kerdes {
 		this._kep = _kep;
 		this._leiras1 = _leiras1;
 		this._leiras2 = _leiras2;
+		this._selectedKategoriak = null;
 	}
 
 	public int get_id() {
@@ -53,23 +57,46 @@ public class Kerdes {
 		return _kep;
 	}
 
-	@SuppressWarnings("null")
 	public Bitmap get_kep_bitmap() {
-		Bitmap bmp = null;
-		Buffer stream = ByteBuffer.wrap(this._kep);
-		bmp.copyPixelsFromBuffer(stream);
-		return bmp;
+		Bitmap newImage = null;
+		if (this._kep != null) {
+			ByteArrayInputStream imageStream = new ByteArrayInputStream(this._kep);
+			Bitmap theImage = BitmapFactory.decodeStream(imageStream);
+			newImage = Bitmap.createScaledBitmap(theImage, 150, 150, true);
+		}
+		return newImage;
 	}
 
 	public void set_kep(byte[] _kep) {
-		this._kep = _kep;
+		if (_kep != null) {
+			ByteArrayInputStream imageStream = new ByteArrayInputStream(_kep);
+			Bitmap theImage = BitmapFactory.decodeStream(imageStream);
+			int maxX = theImage.getWidth();
+			int maxY = theImage.getHeight();
+			// Bitmap newImage = Bitmap.createBitmap(300, 300, null);
+			if (maxX != 300 || maxY != 300) {
+				Bitmap newImage = Bitmap.createScaledBitmap(theImage, 300, 300, true);
+//				int maxnX = newImage.getWidth();
+//				int maxnY = newImage.getHeight();
+				set_kep(newImage);
+			}
+			else {
+				set_kep(theImage);
+			}
+		} else {
+			this._kep = null;
+		}
 	}
 
 	public void set_kep(Bitmap _kep) {
-		Bitmap bmp = _kep;
-		ByteArrayOutputStream stream = new ByteArrayOutputStream();
-		bmp.compress(Bitmap.CompressFormat.JPEG, 90, stream);
-		this._kep = stream.toByteArray();
+		if (_kep != null) {
+			Bitmap bmp = _kep;
+			ByteArrayOutputStream stream = new ByteArrayOutputStream();
+			bmp.compress(Bitmap.CompressFormat.JPEG, 90, stream);
+			this._kep = stream.toByteArray();
+		} else {
+			this._kep = null;
+		}
 	}
 
 	public String get_leiras1() {
@@ -86,6 +113,22 @@ public class Kerdes {
 
 	public void set_leiras2(String _leiras2) {
 		this._leiras2 = _leiras2;
+	}
+
+	public List<KategoriaSelected> get_SelectedKategoriak() {
+		return _selectedKategoriak;
+	}
+
+	public List<Kategoria> get_Kategoriak() {
+		List<Kategoria> ret = new ArrayList<Kategoria>();
+		for ( int i = 0; i < this._selectedKategoriak.size(); ++i ) {
+				ret.add(this._selectedKategoriak.get(i).get_kat());
+			}
+		return ret;
+	}
+
+	public void set_SelectedKategoriak(List<KategoriaSelected> _selectedKategoriak) {
+		this._selectedKategoriak = _selectedKategoriak;
 	}
 
 }

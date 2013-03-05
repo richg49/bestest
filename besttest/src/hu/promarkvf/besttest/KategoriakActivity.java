@@ -34,6 +34,8 @@ public class KategoriakActivity extends ListActivity {
 		if (kategoriaList.size() == 0) {
 			ujkat = Boolean.TRUE;
 			DataPreferences.kategoria = null;
+//			DataPreferences.kep = null;
+			DataPreferences.kerdes = null;
 			Intent myIntent = new Intent();
 			myIntent.setClass(KategoriakActivity.this, KategoriaAddActivity.class);
 			startActivity(myIntent);
@@ -52,6 +54,8 @@ public class KategoriakActivity extends ListActivity {
 				DataPreferences.kategoria.set_id((int) lastID);
 				((KategoriaArrayAdapter) getListAdapter()).addItem(DataPreferences.kategoria);
 				DataPreferences.kategoria = null;
+//				DataPreferences.kep = null;
+				DataPreferences.kerdes = null;
 				((KategoriaArrayAdapter) getListAdapter()).notifyDataSetChanged();
 			} else {
 				// Módosítás
@@ -59,6 +63,8 @@ public class KategoriakActivity extends ListActivity {
 				dbHelper.UpdateKategoria(DataPreferences.kategoria);
 				((KategoriaArrayAdapter) getListAdapter()).modifyRow(info.position, DataPreferences.kategoria);
 				DataPreferences.kategoria = null;
+//				DataPreferences.kep = null;
+				DataPreferences.kerdes = null;
 				((KategoriaArrayAdapter) getListAdapter()).notifyDataSetChanged();
 			}
 		}
@@ -95,6 +101,8 @@ public class KategoriakActivity extends ListActivity {
 		case 1: {
 			ujkat = Boolean.TRUE;
 			DataPreferences.kategoria = null;
+//			DataPreferences.kep = null;
+			DataPreferences.kerdes = null;
 			Intent myIntent = new Intent();
 			myIntent.setClass(KategoriakActivity.this, KategoriaAddActivity.class);
 			startActivity(myIntent);

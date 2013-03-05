@@ -1,4 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
     <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" android:layout="@layout/activity_main">
-        <EditTextPreference android:title="data" android:key="db"/>
+        <EditTextPreference android:key="kerdespersorozat" android:title="@string/kerdespersorozatT" android:defaultValue="20" android:summary="@string/kerdespersorozat"/>
+        <EditTextPreference android:defaultValue="130" android:title="@string/image_h" android:key="image_h"/>
+        <EditTextPreference android:title="@string/image_w" android:key="image_w" android:defaultValue="130"/>
+        <CheckBoxPreference android:title="@string/autostepp" android:key="autostepp"/>
+        <EditTextPreference android:key="autostepptime" android:title="@string/autostepptime"/>
     </PreferenceScreen>
