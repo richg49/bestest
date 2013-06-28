@@ -102,6 +102,7 @@ public class UsersActivity extends ListActivity {
 	protected void onListItemClick(ListView l, View v, int position, long id) {
 	}
 
+	@Override
 	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 		switch ( requestCode ) {
 		case NEW_USER_ACTIVITY_ID:

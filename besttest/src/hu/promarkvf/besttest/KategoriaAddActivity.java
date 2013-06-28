@@ -37,6 +37,7 @@ public class KategoriaAddActivity extends Activity {
 		}
 
 		btnOk.setOnClickListener(new OnClickListener() {
+			@Override
 			public void onClick(View v) {
 				int szulo;
 				try {
@@ -57,6 +58,7 @@ public class KategoriaAddActivity extends Activity {
 
 		Button btnCancel = (Button) findViewById(R.id.btnCancel);
 		btnCancel.setOnClickListener(new OnClickListener() {
+			@Override
 			public void onClick(View v) {
 				DataPreferences.kategoria = null;
 //				DataPreferences.kep = null;

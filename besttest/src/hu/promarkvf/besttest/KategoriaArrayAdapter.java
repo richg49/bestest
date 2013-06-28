@@ -2,8 +2,6 @@ package hu.promarkvf.besttest;
 
 import java.util.List;
 
-import hu.promarkvf.besttest.R;
-
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -36,7 +34,8 @@ public class KategoriaArrayAdapter extends ArrayAdapter<Kategoria> {
 		values.add(kat);
     }
 
-    public int getCount() {
+    @Override
+	public int getCount() {
         return values.size();
     }
 

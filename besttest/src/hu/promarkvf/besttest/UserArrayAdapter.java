@@ -33,6 +33,7 @@ public class UserArrayAdapter extends ArrayAdapter<User> {
 		values.add(user);
 	}
 
+	@Override
 	public int getCount() {
 		return values.size();
 	}

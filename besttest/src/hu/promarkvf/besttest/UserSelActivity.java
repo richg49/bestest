@@ -25,11 +25,13 @@ public class UserSelActivity extends Activity implements AdapterView.OnItemSelec
 		spinneruser.setAdapter(aa);
 	}
 
+	@Override
 	public void onItemSelected(AdapterView<?> parent, View v, int position, long id) {
 		dbUser = new DatabaseUser(this);
 		MainActivity.sel_user = dbUser.getUserPos(position);
 	}
 
+	@Override
 	public void onNothingSelected(AdapterView<?> parent) {
 	}
 

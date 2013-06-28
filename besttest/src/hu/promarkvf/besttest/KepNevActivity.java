@@ -10,6 +10,7 @@ import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.Handler;
 import android.app.Activity;
+import android.content.Context;
 import android.content.res.AssetFileDescriptor;
 import android.graphics.Color;
 import android.view.KeyEvent;
@@ -40,7 +41,7 @@ public class KepNevActivity extends Activity implements SimpleGestureListener {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		audio = (AudioManager) getSystemService(KepNevActivity.AUDIO_SERVICE);
+		audio = (AudioManager) getSystemService(Context.AUDIO_SERVICE);
 
 		setContentView(R.layout.activity_kep_nev);
 		detector = new SimpleGestureFilter(this, this);
@@ -119,6 +120,7 @@ public class KepNevActivity extends Activity implements SimpleGestureListener {
 							if ( MainActivity.autostepp ) {
 								Handler handler = new Handler();
 								handler.postDelayed(new Runnable() {
+									@Override
 									public void run() {
 										jobra();
 									}

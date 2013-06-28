@@ -25,13 +25,13 @@
     <TableLayout
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:gravity="center"  >
+        android:gravity="center" >
 
         <TableRow
             android:id="@+id/NevKeptableRow1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:gravity="center"  >
+            android:gravity="center" >
 
             <TableLayout
                 android:layout_width="wrap_content"
@@ -89,8 +89,8 @@
             android:id="@+id/NevKeptableRow3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:gravity="center"
-            android:layout_marginTop="5dp" >
+            android:layout_marginTop="5dp"
+            android:gravity="center" >
 
             <ImageView
                 android:id="@+id/imageView_k1"
@@ -109,7 +109,7 @@
             android:id="@+id/NevKeptableRow4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="5dp" 
+            android:layout_marginTop="5dp"
             android:gravity="center" >
 
             <ImageView

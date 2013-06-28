@@ -100,10 +100,11 @@ public class KerdesekActivity extends ListActivity {
 		// törlés
 		case 0: {
 			alertDialogBuilder = new AlertDialog.Builder(KerdesekActivity.this);
-			alertDialogBuilder.setTitle( (CharSequence) ((Kerdes) getListAdapter().getItem(info.position) ).get_kerdes());
+			alertDialogBuilder.setTitle( ((Kerdes) getListAdapter().getItem(info.position) ).get_kerdes());
 			alertDialogBuilder.setMessage(getString(R.string.kerdesQ));
 			alertDialogBuilder.setCancelable(false);
 			alertDialogBuilder.setPositiveButton(getString(R.string.yes), new DialogInterface.OnClickListener() {
+				@Override
 				public void onClick(DialogInterface dialog, int id) {
 					DatabaseHelper dbHelper = new DatabaseHelper(KerdesekActivity.this);
 					Kerdes kat = (Kerdes) getListAdapter().getItem(info.position);

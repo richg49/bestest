@@ -30,6 +30,7 @@ import android.widget.TableRow;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.app.Activity;
+import android.content.Context;
 import android.content.res.AssetFileDescriptor;
 import android.graphics.Color;
 
@@ -72,7 +73,7 @@ public class NevKepActivity extends Activity implements SimpleGestureListener, A
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_nev_kep);
-		audio = (AudioManager) getSystemService(NevKepActivity.AUDIO_SERVICE);
+		audio = (AudioManager) getSystemService(Context.AUDIO_SERVICE);
 
 		detector = new SimpleGestureFilter(this, this);
 
@@ -179,6 +180,7 @@ public class NevKepActivity extends Activity implements SimpleGestureListener, A
 							if ( MainActivity.autostepp ) {
 								Handler handler = new Handler();
 								handler.postDelayed(new Runnable() {
+									@Override
 									public void run() {
 										jobra();
 									}

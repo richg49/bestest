@@ -1,23 +1,14 @@
 package hu.promarkvf.besttest;
 
-import java.io.IOException;
-import java.net.URLEncoder;
 import java.util.ArrayList;
 import java.util.List;
-
-import org.apache.http.client.methods.HttpGet;
-import org.apache.http.impl.client.BasicResponseHandler;
 
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
-import android.database.sqlite.SQLiteDatabase.CursorFactory;
 import android.database.sqlite.SQLiteOpenHelper;
-import android.net.http.AndroidHttpClient;
 import android.util.Log;
-import android.widget.TextView;
-import android.widget.Toast;
 
 public class DatabaseUser extends SQLiteOpenHelper {
 	private static final int DATABASE_VERSION = 2;

@@ -37,10 +37,12 @@ public class ParcelableUser implements Parcelable {
 	}
 
 	public static final Parcelable.Creator<ParcelableUser> CREATOR = new Parcelable.Creator<ParcelableUser>() {
+		@Override
 		public ParcelableUser createFromParcel(Parcel in) {
 			return new ParcelableUser(in);
 		}
 
+		@Override
 		public ParcelableUser[] newArray(int size) {
 			return new ParcelableUser[size];
 		}

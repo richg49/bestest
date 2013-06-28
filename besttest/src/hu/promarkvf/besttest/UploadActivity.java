@@ -29,11 +29,13 @@ public class UploadActivity extends Activity implements AdapterView.OnItemSelect
 		spinneruser.setAdapter(aa);
 	}
 
+	@Override
 	public void onItemSelected(AdapterView<?> parent, View v, int position, long id) {
 		dbUser = new DatabaseUser(this);
 		user = dbUser.getUserPos(position);
 	}
 
+	@Override
 	public void onNothingSelected(AdapterView<?> parent) {
 	}
 

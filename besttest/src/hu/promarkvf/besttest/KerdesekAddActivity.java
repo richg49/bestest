@@ -7,6 +7,7 @@ import java.util.List;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
+import android.provider.MediaStore.MediaColumns;
 import android.app.Activity;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
@@ -67,9 +68,9 @@ public class KerdesekAddActivity extends Activity {
 			kategoriasel = new boolean[DataPreferences.kerdes.get_SelectedKategoriak().size()];
 			for ( int i = 0; i < DataPreferences.kerdes.get_SelectedKategoriak().size(); i++ ) {
 				kategorialist.add(DataPreferences.kerdes.get_SelectedKategoriak().get(i).get_kat());
-				kategoriaid[i] = ( (KategoriaSelected) DataPreferences.kerdes.get_SelectedKategoriak().get(i) ).get_id();
-				kategoriak[i] = ( (KategoriaSelected) DataPreferences.kerdes.get_SelectedKategoriak().get(i) ).get_nev();
-				kategoriasel[i] = ( (KategoriaSelected) DataPreferences.kerdes.get_SelectedKategoriak().get(i) ).get_selectedJel();
+				kategoriaid[i] = DataPreferences.kerdes.get_SelectedKategoriak().get(i).get_id();
+				kategoriak[i] = DataPreferences.kerdes.get_SelectedKategoriak().get(i).get_nev();
+				kategoriasel[i] = DataPreferences.kerdes.get_SelectedKategoriak().get(i).get_selectedJel();
 			}
 			spinnerkat.setItems(kategoriak);
 			spinnerkat.setSelectionB(kategoriasel);
@@ -83,14 +84,15 @@ public class KerdesekAddActivity extends Activity {
 			kategoriaid = new int[kategorialist.size()];
 			kategoriak = new String[kategorialist.size()];
 			for ( int i = 0; i < kategorialist.size(); i++ ) {
-				kategoriaid[i] = ( (Kategoria) kategorialist.get(i) ).get_id();
-				kategoriak[i] = ( (Kategoria) kategorialist.get(i) ).get_nev();
+				kategoriaid[i] = kategorialist.get(i).get_id();
+				kategoriak[i] = kategorialist.get(i).get_nev();
 			}
 			spinnerkat.setItems(kategoriak);
 		}
 
 		// Rögzít
 		btnOk.setOnClickListener(new OnClickListener() {
+			@Override
 			public void onClick(View v) {
 				if ( ujkerdes ) {
 					DataPreferences.kerdes = new Kerdes(0, editkerdes.getText().toString(), null, editleiras1.getText().toString(), editleiras2.getText().toString());
@@ -117,6 +119,7 @@ public class KerdesekAddActivity extends Activity {
 
 		Button btnCancel = (Button) findViewById(R.id.btnCancelkerdes);
 		btnCancel.setOnClickListener(new OnClickListener() {
+			@Override
 			public void onClick(View v) {
 				DataPreferences.kategoria = null;
 				// DataPreferences.kep = null;
@@ -127,6 +130,7 @@ public class KerdesekAddActivity extends Activity {
 
 		Button btnCamera = (Button) findViewById(R.id.btnUjkepFoto);
 		btnCamera.setOnClickListener(new OnClickListener() {
+			@Override
 			public void onClick(View v) {
 				Intent myIntent = new Intent();
 				myIntent.setClass(KerdesekAddActivity.this, CameraActivity.class);
@@ -137,6 +141,7 @@ public class KerdesekAddActivity extends Activity {
 
 		Button btnkepfeltolt = (Button) findViewById(R.id.btnUjkepFile);
 		btnkepfeltolt.setOnClickListener(new OnClickListener() {
+			@Override
 			public void onClick(View v) {
 				Intent intent = new Intent();
 				intent.addCategory(Intent.CATEGORY_OPENABLE);
@@ -163,6 +168,7 @@ public class KerdesekAddActivity extends Activity {
 		setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 	}
 
+	@Override
 	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 		switch ( requestCode ) {
 		case FILE_BROWSER_ACTIVITY_ID:
@@ -198,9 +204,9 @@ public class KerdesekAddActivity extends Activity {
 	}
 
 	private String getPath(Uri uri) {
-		String[] projection = { MediaStore.Images.Media.DATA };
+		String[] projection = { MediaColumns.DATA };
 		Cursor cursor = managedQuery(uri, projection, null, null, null);
-		int column_index = cursor.getColumnIndexOrThrow(MediaStore.Images.Media.DATA);
+		int column_index = cursor.getColumnIndexOrThrow(MediaColumns.DATA);
 		cursor.moveToFirst();
 		return cursor.getString(column_index);
 	}

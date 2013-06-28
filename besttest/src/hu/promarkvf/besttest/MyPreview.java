@@ -50,6 +50,7 @@ public class MyPreview extends SurfaceView implements SurfaceHolder.Callback {
 		mHolder.setType(SurfaceHolder.SURFACE_TYPE_PUSH_BUFFERS);
 	}
 
+	@Override
 	public void surfaceCreated(SurfaceHolder holder) {
 		try {
 			mCamera.setPreviewDisplay(holder);
@@ -60,10 +61,12 @@ public class MyPreview extends SurfaceView implements SurfaceHolder.Callback {
 		}
 	}
 
+	@Override
 	public void surfaceDestroyed(SurfaceHolder holder) {
 		// TODO: tov�bbi lehet�s�gek kezel�se az el�n�zeti k�p bez�r�d�sakor
 	}
 
+	@Override
 	public void surfaceChanged(SurfaceHolder holder, int format, int w, int h) {
 		Camera.Parameters parameters = mCamera.getParameters();
 		Display display = ( (WindowManager) cont.getSystemService(Context.WINDOW_SERVICE) ).getDefaultDisplay();

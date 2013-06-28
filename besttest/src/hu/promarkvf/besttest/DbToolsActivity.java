@@ -172,6 +172,7 @@ public class DbToolsActivity extends Activity implements AdListener, OnClickList
 			alertDialogBuilder.setMessage(getString(R.string.restorQ));
 			alertDialogBuilder.setCancelable(false);
 			alertDialogBuilder.setPositiveButton(getString(R.string.yes), new DialogInterface.OnClickListener() {
+				@Override
 				public void onClick(DialogInterface dialog, int id) {
 					String ret1 = dbHelper.DbRestor();
 					AlertDialog.Builder alertDialogBuilder1 = new AlertDialog.Builder(DbToolsActivity.this);
@@ -195,6 +196,7 @@ public class DbToolsActivity extends Activity implements AdListener, OnClickList
 			alertDialogBuilder.setMessage(getString(R.string.dbalapQ));
 			alertDialogBuilder.setCancelable(false);
 			alertDialogBuilder.setPositiveButton(getString(R.string.yes), new DialogInterface.OnClickListener() {
+				@Override
 				public void onClick(DialogInterface dialog, int id) {
 					String ret1 = dbHelper.DbAlap();
 					AlertDialog.Builder alertDialogBuilder1 = new AlertDialog.Builder(DbToolsActivity.this);
@@ -219,6 +221,7 @@ public class DbToolsActivity extends Activity implements AdListener, OnClickList
 			alertDialogBuilder.setMessage(getString(R.string.deleteQ));
 			alertDialogBuilder.setCancelable(false);
 			alertDialogBuilder.setPositiveButton(getString(R.string.yes), new DialogInterface.OnClickListener() {
+				@Override
 				public void onClick(DialogInterface dialog, int id) {
 					String ret1 = dbHelper.KerdesUrit();
 					AlertDialog.Builder alertDialogBuilder1 = new AlertDialog.Builder(DbToolsActivity.this);
